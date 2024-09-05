@@ -198,10 +198,14 @@ class MultiRobotPathPlanner(DARP):
             print(f'Average number of cells in robots paths: {np.mean(np.array(best_case_num_paths))}')
             print(f'\nTurns Analysis: {self.best_case}')
 
+            cleanPaths = []
             for path in self.best_case.paths:
+                cleanPath = []
                 for pos in path:
-                    print("(",pos[0], ",", pos[1], end=")")
-                print("Robot")
+                    cleanPos = (path[0], path[1])
+                    cleanPath.append(cleanPos)
+                cleanPaths.append(cleanPath)
+            self.cleanPaths = cleanPaths
                 
             
     def CalcRealBinaryReg(self, BinaryRobotRegion, rows, cols):
