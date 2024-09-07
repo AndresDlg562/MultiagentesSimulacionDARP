@@ -7,6 +7,7 @@ app = Flask(_name_)
 initial_positions = {}
 tractor_paths = {}
 prepare_land_paths = {}
+tractorLand_paths = {}
 
 @app.route('/initial_positions', methods=['GET'])
 def get_initial_positions():
@@ -45,6 +46,14 @@ def update_initial_positions():
     with open('initial_positions.json', 'w') as f:
         json.dump(initial_positions, f, indent=4)
     return jsonify({"message": "Initial positions updated successfully"}), 200
+
+@app.route('/tractorLand_paths', methods=['POST'])
+def update_tractor_paths():
+    global tractorLand_paths
+    tractorLand_paths = request.json
+    with open('tractorLand_paths.json', 'w') as f:
+        json.dump(tractorLand_paths, f, indent=4)
+    return jsonify({"message": "Tractor land paths updated successfully"}), 200
 
 if _name_ == '_main_':
     app.run(host='0.0.0.0', port=5001)
