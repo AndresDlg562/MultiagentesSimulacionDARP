@@ -46,5 +46,5 @@ def update_tractorLand_paths():
         json.dump(tractorLand_paths, f, indent=4)
     return jsonify({"message": "Tractor land paths updated successfully"}), 200
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
