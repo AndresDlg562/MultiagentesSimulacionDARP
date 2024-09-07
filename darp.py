@@ -1,7 +1,6 @@
 import numpy as np
 import sys
 import cv2
-from Visualization import darp_area_visualization
 import time
 import random
 import os
@@ -124,8 +123,7 @@ class DARP:
             self.color.append(list(np.random.choice(range(256), size=3)))
         
         np.random.seed(1)
-        if self.visualization:
-            self.assignment_matrix_visualization = darp_area_visualization(self.A, self.droneNo, self.color, self.initial_positions)
+
 
     def sanity_check(self, given_initial_positions, given_portions, obs_pos, notEqualPortions):
         initial_positions = []
