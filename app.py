@@ -20,7 +20,7 @@ def get_tractor_paths():
 @app.route('/tractorLand_paths', methods=['GET'])
 def get_prepare_land_paths():
     """Endpoint para obtener los paths de preparación de la tierra de los tractores."""
-    return jsonify(prepare_land_paths)
+    return jsonify(tractorLand_paths)
 
 @app.route('/tractor_paths', methods=['POST'])
 def update_tractor_paths():
