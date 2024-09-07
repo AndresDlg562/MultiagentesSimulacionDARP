@@ -112,8 +112,8 @@ class MultiRobotPathPlanner(DARP):
 
 def mainPaths(grid_size, initialPositions, obstaclePositions):
     robots = 2
-    initialPositions = [(3,4), (4,5)]
-    obstaclePositions = [(1,1),(1,8),(2,4),(2,7),(3,0),(5,8),(9,2)]
+    #initialPositions = [(3,4), (4,5)]
+    #obstaclePositions = [(1,1),(1,8),(2,4),(2,7),(3,0),(5,8),(9,2)]
     cleanInitialPositions = []
     cleanObstaclePositions = []
     for pos in initialPositions:
